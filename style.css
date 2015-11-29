@@ -1,0 +1,46 @@
+body {
+	padding: 0px;
+	margin: 0px;
+	background: #EEE;
+	font-family: helvetica;
+}
+
+.sidebar {
+	background: #223;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	width: 300px;
+	color: #DDD;
+	padding: 10px;
+	overflow: auto;
+	
+}
+
+.sidebar input {
+	border: 2px solid #DDD;
+	border-radius: 20px;
+	padding: 10px;
+	background: transparent;
+	display: block;
+	margin: 20px auto;
+	width: 200px;
+	color: white;
+	text-transform: uppercase;
+}
+
+.sidebar .schoolname {
+	color: #888;
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+.sidebar a.personname {
+	color: #DDD;
+	text-decoration: none;
+	font-weight: bold;
+	display: block;
+	padding-left: 5px;
+}
+

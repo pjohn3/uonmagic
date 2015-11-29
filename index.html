@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>UoN Magic</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script type="text/javascript">
+			var staffname="";
+			function loadDoc(inputelement) {
+				if (staffname != inputelement.value) {
+					staffname = inputelement.value;
+					var xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function() {
+						if (xhttp.readyState == 4 && xhttp.status == 200) {
+							document.getElementById("results").innerHTML = xhttp.responseText;
+							settimeout(loadDoc(getElementById("findstaff")),100);
+						}
+					};
+					xhttp.open("GET", "findstaff.php?name="+encodeURIComponent(staffname), true);
+					xhttp.send();
+				}			
+			}
+		</script>
+	</head>
+	<body onload="settimeout(loadDoc(getElementById("findstaff")),100);">
+		<div class="sidebar">
+			Sidebar
+			<input type="text" placeholder="Find staff..." onkeyup="loadDoc(this)" id="findstaff"/>
+			<div id="results">
+			</div>
+		</div>
+	</body>
+</html>
